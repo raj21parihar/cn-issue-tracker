@@ -30,15 +30,15 @@ CN Issue tracker requires the following dependencies:
 - **Express.js**: a popular Node.js framework for building web applications.
 - **MongoDB**: a document-based NoSQL database used for storing data.
 - **Packages**:
-  - choices.js: ^10.2.0
-  - connect-mongo: ^4.6.0
-  - cookie-parser: ^1.4.6
-  - ejs: ^3.1.8
-  - express: ^4.18.2
-  - express-ejs-layouts: ^2.5.1
-  - express-session: ^1.17.3
-  - mongoose: ^6.9.0
-  - node-sass-middleware: ^1.0.1
+  - `choices.js: ^10.2.0`
+  - `connect-mongo: ^4.6.0`
+  - `cookie-parser: ^1.4.6`
+  - `ejs: ^3.1.8`
+  - `express: ^4.18.2`
+  - `express-ejs-layouts: ^2.5.1`
+  - `express-session: ^1.17.3`
+  - `mongoose: ^6.9.0`
+  - `node-sass-middleware: ^1.0.1`
 
 ## Usage
 
@@ -60,7 +60,7 @@ Parmanand Parihar
 
 ## License
 
-This project is licensed under the ISC License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the ISC License.
 
 ## Bugs/Issues
 
