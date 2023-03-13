@@ -1,0 +1,29 @@
+<nav aria-label="breadcrumb" class="pt-3">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item" aria-current="page">Projects (<%= projects.length %>)</li>
+    </ol>
+</nav>
+<% if(locals.projects) { %>
+<% for(p of projects) { %>
+<div class="my-3 p-3 bg-body rounded shadow-sm">
+    <a href="/project/<%=p._id%>">
+        <div class="d-flex text-muted ">
+            <svg class="bd-placeholder-img flex-shrink-0 me-2 rounded" width="32" height="32" role="img" aria-label="Placeholder:32x32" focusable="false">
+                <rect width="100%" height="100%" fill="#6f42c1"></rect>
+            </svg>
+            <p class=" mb-0 small lh-sm">
+                <strong class=" text-gray-dark"><%= p.name %></strong>
+                <small class=" text-gray-dark"> @<%= p.author %></small>
+                <br>
+                <%= p.description %>
+            </p>
+        </div>
+    </a>
+</div>
+<% } } else { %>
+<p class="empty-result-msg">
+    Nothing to show !
+    <br>
+    Please create a project by clicking "New Project".
+</p>
+<% } %>

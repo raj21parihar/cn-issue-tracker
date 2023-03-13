@@ -1,0 +1,48 @@
+<nav aria-label="breadcrumb" class="pt-3">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item" aria-current="page"><a href="/">Projects</a></li>
+        <li class="breadcrumb-item" aria-current="page"><strong>New Project</strong></li>
+    </ol>
+</nav>
+<div class="my-3 p-3 bg-body rounded shadow-sm">
+
+    <form action="/project/create" method="POST">
+        <div class="form-group col-12">
+            <label for="name">Project Name</label>
+            <input type="text" id="name" name="name" class="form-control" placeholder="Enter Project Name..." required>
+        </div><br>
+        <div class="form-group">
+            <label for="description">Project Description</label>
+            <input type="text" id="description" name="description" class="form-control" placeholder="Enter Project Description..." required>
+        </div><br>
+        <div class="form-group">
+            <label for="author">Author</label>
+            <input type="text" id="author" name="author" class="form-control" placeholder="Enter Author..." required>
+        </div><br>
+
+        <div class="form-group">
+            <label for="labels">Labels</label>
+            <input type="text" name="labels" id="labels" class="form-control" placeholder="Enter Label.." required>
+        </div><br>
+
+        <div class="form-group">
+            <button type="submit" class="btn btn-danger">Create Project</button>
+            <button type="reset" class="btn btn-secondary">Reset</button>
+        </div>
+    </form>
+</div>
+
+<script>
+    const element = document.getElementById('labels');
+    const choices = new Choices(element, {
+        allowHTML: true,
+        delimiter: ',',
+        editItems: true,
+        removeItemButton: true,
+        addItems: true,
+        duplicateItemsAllowed: false,
+        addItemText: (value) => {
+            return `Press Enter to add <b>"${value}"</b>`;
+        },
+    });
+</script>

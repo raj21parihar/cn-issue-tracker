@@ -4,11 +4,11 @@ CN Issue Tracker is a web application that allows users to create, view, and man
 
 ## Features
 
-- **Neat UI**: CN Issue Tracker has a clean and organized structure, with intuitive navigation between pages.
-- **Home Page**: The home page displays a list of projects and a button to create a new project.
-- **Create Project Page**: This page allows users to create a new project by entering the project name, description, and author.
-- **Project Detail Page**: This page displays the details of a selected project and its associated issues. Users can filter issues by labels, author, and search by title or description. Users can also create a new issue from this page.
-- **Create Issue Page**: This page allows users to create a new issue by entering the issue title, description, and labels. Users can select multiple labels from a dropdown that suggests existing labels as the user types.
+-   **Neat UI**: CN Issue Tracker has a clean and organized structure, with intuitive navigation between pages.
+-   **Home Page**: The home page displays a list of projects and a button to create a new project.
+-   **Create Project Page**: This page allows users to create a new project by entering the project name, description, and author.
+-   **Project Detail Page**: This page displays the details of a selected project and its associated issues. Users can filter issues by labels, author, and search by title or description. Users can also create a new issue from this page.
+-   **Create Issue Page**: This page allows users to create a new issue by entering the issue title, description, and labels. Users can select multiple labels from a dropdown that suggests existing labels as the user types.
 
 ## Getting Started
 
@@ -27,18 +27,18 @@ That's it! You should now have the CN Issue Tracker app up and running on your l
 
 CN Issue tracker requires the following dependencies:
 
-- **Express.js**: a popular Node.js framework for building web applications.
-- **MongoDB**: a document-based NoSQL database used for storing data.
-- **Packages**:
-  - `choices.js: ^10.2.0`
-  - `connect-mongo: ^4.6.0`
-  - `cookie-parser: ^1.4.6`
-  - `ejs: ^3.1.8`
-  - `express: ^4.18.2`
-  - `express-ejs-layouts: ^2.5.1`
-  - `express-session: ^1.17.3`
-  - `mongoose: ^6.9.0`
-  - `node-sass-middleware: ^1.0.1`
+-   **Express.js**: a popular Node.js framework for building web applications.
+-   **MongoDB**: a document-based NoSQL database used for storing data.
+-   **Packages**:
+    -   `choices.js: ^10.2.0`
+    -   `connect-mongo: ^4.6.0`
+    -   `cookie-parser: ^1.4.6`
+    -   `ejs: ^3.1.8`
+    -   `express: ^4.18.2`
+    -   `express-ejs-layouts: ^2.5.1`
+    -   `express-session: ^1.17.3`
+    -   `mongoose: ^6.9.0`
+    -   `node-sass-middleware: ^1.0.1`
 
 ## Usage
 
@@ -65,4 +65,3 @@ This project is licensed under the ISC License.
 ## Bugs/Issues
 
 If you encounter any bugs or issues while using the app, please report them [here](https://github.com/raj21parihar/cn-issue-tracker/issues).
-

@@ -1,0 +1,98 @@
+<nav aria-label="breadcrumb" class="pt-3">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item" aria-current="page"><a href="/">Projects</a></li>
+        <li class="breadcrumb-item" aria-current="page"><strong>Issues</strong></li>
+    </ol>
+</nav>
+<div class=" align-items-center p-3 my-3 text-white rounded shadow-sm project-title">
+    <div class="d-flex text-muted" style="justify-content:space-between; align-items:flex-star">
+        <div class="lh-1">
+            <h1 class="h6 mb-2 text-white lh-1"><%= locals.project.name %> <small style="color: rgb(197, 188, 188);">@<%= locals.project.author %></small></h1>
+            <small><small style="color:#fff;" class="pt-1"><%= locals.project.description %></small></small>
+        </div>
+        <div> <a class="nowrap btn btn-sm" style=" background-color:#300c33; color:white; white-space: nowrap;" href="/issue/new?pid=<%=locals.project.id%>"><i class="fa fa-circle-plus"></i> Add Issue</a></div>
+    </div>
+</div>
+<nav aria-label="breadcrumb" class="pt-3">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item" aria-current="page"><strong>Issues List (<%= issues.length %>)</strong></li>
+    </ol>
+</nav>
+
+<form action="/project/<%=locals.project.id%>">
+    <div class="row">
+        <div class="col input-group mb-3">
+            <input type="text" class="form-control" name="search" id="search" value="<%= locals.query.search %>" placeholder="Search by title or description.." onchange="this.form.submit()">
+        </div>
+        <div class="col-2">
+            <select name="author" id="author" class="form-select" onchange="this.form.submit()">
+                <option value="" selected>Select author..</option>
+                <%= authors  %>
+                <% for(author of authors) {
+                let author_selected = ( author == locals.query.author ) ? "selected" : ""; %>
+                <option value="<%= author %>" <%= author_selected %>> <%=author %></option>
+                <% } %>
+            </select>
+        </div>
+        <div class="col">
+            <select multiple type="text" name="labels" id="labels" class="form-control" placeholder="Select labels.." onchange="this.form.submit()">
+                <option value="">Select label(s)..</option>
+                <% for(label of locals.project.labels) { 
+                let label_selected = "";
+                if(locals.query.labels){ label_selected = locals.query.labels.includes(label) ? "selected" : "";} %>
+                <option value=" <%= label %>" <%= label_selected %>> <%=label %></option>
+                <% } %>
+            </select>
+        </div>
+        <div class="col-1">
+            <button type="submit" class="form-control">
+                &nbsp;<i class="fa-solid fa-magnifying-glass"> </i>&nbsp;
+            </button>
+        </div>
+        <div class="col-1">
+            <button type="submit" name="reset" value="reset" class="form-control">
+                &nbsp;<i class="fa-solid fa-arrows-rotate"></i>&nbsp;
+            </button>
+        </div>
+    </div>
+</form>
+
+<% if (locals.issues.length) { %>
+<% for(issue of issues) { %>
+<div class="my-3 p-2 bg-body rounded shadow-sm">
+    <!-- <a href="/project/"> -->
+    <div class="d-flex text-muted" style="justify-content:space-between;">
+
+        <p class=" mb-0 small lh-sm">
+
+            <strong class=" text-gray-dark"><%= issue.title %></strong>
+            <small class=" text-gray-dark"> @<%= issue.author %></small>
+            <br>
+            <%= issue.description %>
+        </p>
+        <p style="align-self: flex-end; margin-bottom: 0;">
+            <% for (let label of issue.labels) { %>
+            <span class="label-tab"> <%= label %> </span>
+            <% } %>
+        </p>
+
+    </div>
+
+    <!-- </a> -->
+</div>
+<% }%>
+<% } else { %>
+<p class="empty-result-msg">
+    Nothing to show !
+    <br>
+    Please reset filter or add new issue by clicking "Add Issue".
+</p>
+<% } %>
+
+<script>
+    var multipleCancelButton = new Choices(
+        '#labels', {
+            removeItemButton: true,
+        }
+    );
+</script>

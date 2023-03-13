@@ -1,0 +1,48 @@
+.header {
+  overflow: hidden;
+  background-color: #300c33;
+  padding: 14px 8px;
+  position: fixed;
+  width: 100%;
+  z-index: 99;
+}
+
+.logo,
+.logo:hover {
+  float: left;
+  color: #bc2551;
+  text-align: center;
+  padding: 4px;
+  padding-left: 10px;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+a.header-btn {
+  float: right;
+  border: solid 1px white;
+  color: white;
+  font-size: 14px;
+}
+
+a.header-btn:hover {
+  background-color: white;
+  color: #bc2551;
+}
+
+@media screen and (max-width: 500px) {
+  .header a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+  .header-right {
+    float: none;
+  }
+}
+
+.breadcrumb-item {
+  color: #300c33;
+}

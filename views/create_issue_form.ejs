@@ -1,0 +1,56 @@
+<script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
+<nav aria-label="breadcrumb" class="pt-3">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item" aria-current="page"><a href="/">Project</a></li>
+        <li class="breadcrumb-item" aria-current="page"><a href="/project/<%=locals.project.id%>"><%= locals.project.name %></a></li>
+        <li class="breadcrumb-item" aria-current="page"><strong>New Issue</strong></li>
+    </ol>
+</nav>
+<div class="my-3 p-3 bg-body rounded shadow-sm">
+
+    <form action="/issue/create" method="POST">
+        <div class="form-group col-12">
+            <label for="title">Issue Title</label>
+            <input type="text" name="title" id="title" class="form-control" placeholder="Enter Title..." required>
+        </div><br>
+        <div class="form-group">
+            <label for="description">Issue Description</label>
+            <input type="text" name="description" id="description" class="form-control" placeholder="Enter Description...">
+        </div><br>
+        <div class="form-group">
+            <label for="author">Author</label>
+            <input type="text" name="author" id="author" class="form-control" placeholder="Enter Author..." required>
+        </div><br>
+
+        <div class="form-group">
+            <label for="labels">Labels</label>
+            <select multiple type="text" name="labels" id="labels" class="form-control" placeholder="Enter Label..">
+                <option value="">Select label(s)..</option>
+                <% for(label of locals.project.labels) { %>
+                <option value=" <%= label %>"> <%=label %></option>
+                <% } %>
+            </select>
+        </div><br>
+
+        <input type="hidden" name="project" id="project" value="<%= locals.project.id %>">
+        <div class="form-group">
+            <button type="submit" class="btn btn-danger">Create Issue</button>
+            <button type="reset" class="btn btn-secondary">Reset</button>
+        </div>
+    </form>
+</div>
+
+<script>
+    const element = document.getElementById('labels');
+    const choices = new Choices(element, {
+        allowHTML: true,
+        delimiter: ',',
+        editItems: true,
+        removeItemButton: true,
+        addItems: true,
+        duplicateItemsAllowed: false,
+        addItemText: (value) => {
+            return `Press Enter to add <b>"${value}"</b>`;
+        },
+    });
+</script>

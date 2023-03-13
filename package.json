@@ -1,0 +1,39 @@
+{
+    "name": "cn-issue-tracker",
+    "version": "1.0.0",
+    "description": "A nodejs + ejs application to track issues/bugs for projects.",
+    "main": "index.js",
+    "scripts": {
+        "start": "node index.js",
+        "dev": "nodemon index.js",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/raj21parihar/cn-issue-tracker.git"
+    },
+    "keywords": [
+        "Issue",
+        "Tracker",
+        "Bug",
+        "Project Management"
+    ],
+    "author": "Parmanand Parihar",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/raj21parihar/cn-issue-tracker/issues"
+    },
+    "homepage": "https://github.com/raj21parihar/cn-issue-tracker#readme",
+    "dependencies": {
+        "choices.js": "^10.2.0",
+        "connect-mongo": "^4.6.0",
+        "cookie-parser": "^1.4.6",
+        "dotenv": "^16.0.3",
+        "ejs": "^3.1.8",
+        "express": "^4.18.2",
+        "express-ejs-layouts": "^2.5.1",
+        "express-session": "^1.17.3",
+        "mongoose": "^6.9.0",
+        "node-sass-middleware": "^1.0.1"
+    }
+}
