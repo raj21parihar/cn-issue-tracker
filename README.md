@@ -21,7 +21,7 @@ To get started with the CN Issue Tracker app, follow these steps:
 
 That's it! You should now have the CN Issue Tracker app up and running on your local machine.
 
-> Note: In order to use the app's full functionality, you will need to have Node.js and npm installed on your system. If you don't have them installed, you can download and install them from the official Node.js website: https://nodejs.org/en/download/
+> Note: In order to use the app's functionality, you will need to have Node.js and npm installed on your system. If you don't have them installed, you can download and install them from the official Node.js website: https://nodejs.org/en/download/
 
 ## Dependencies
 
