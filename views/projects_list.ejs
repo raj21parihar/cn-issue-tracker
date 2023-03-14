@@ -3,7 +3,7 @@
         <li class="breadcrumb-item" aria-current="page">Projects (<%= projects.length %>)</li>
     </ol>
 </nav>
-<% if(locals.projects) { %>
+<% if(locals.projects.length > 0) { %>
 <% for(p of projects) { %>
 <div class="my-3 p-3 bg-body rounded shadow-sm">
     <a href="/project/<%=p._id%>">
