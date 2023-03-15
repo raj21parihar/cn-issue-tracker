@@ -6,7 +6,7 @@ const MongoStore = require('connect-mongo');
 const cookieParser = require('cookie-parser');
 const session = require('express-session');
 const expressLayouts = require('express-ejs-layouts');
-const sassMiddleware = require('node-sass-middleware');
+// const sassMiddleware = require('node-sass-middleware');
 require('dotenv').config();
 app.set('layout extractStyles', true);
 app.set('layout extractScripts', true);
@@ -33,15 +33,15 @@ app.use(
         }),
     })
 );
-app.use(
-    sassMiddleware({
-        src: './assets/scss',
-        dest: './assets/css',
-        debug: true,
-        outputStyle: 'expanded',
-        prefix: '/css',
-    })
-);
+// app.use(
+//     sassMiddleware({
+//         src: './assets/scss',
+//         dest: './assets/css',
+//         debug: true,
+//         outputStyle: 'expanded',
+//         prefix: '/css',
+//     })
+// );
 app.use(express.static('./assets'));
 app.use('/uploads', express.static(__dirname + '/uploads'));
 
