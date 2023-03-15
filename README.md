@@ -14,9 +14,18 @@ CN Issue Tracker is a web application that allows users to create, view, and man
 
 To get started with the CN Issue Tracker app, follow these steps:
 
-1. Clone the repository: `git clone https://github.com/raj21parihar/cn-issue-tracker.git`
-2. Install dependencies: `npm install`
-3. Start the server: `npm start`
+1. Clone the repository:
+```
+ git clone https://github.com/raj21parihar/cn-issue-tracker.git
+```
+2. Install dependencies: 
+```
+ npm install
+ ```
+3. Start the server:
+```
+ npm start
+ ```
 4. Open the app in your web browser at `http://localhost:3000`
 
 That's it! You should now have the CN Issue Tracker app up and running on your local machine.
